@@ -63,7 +63,7 @@ public class QuickSortAlgorithm {
 	 * 
 	 * @param nums 带排序的数组
 	 */
-	private static void quick(int[] nums) {
+	private static void select(int[] nums) {
 		if (nums.length > 0) {
 			quickSort(nums, 0, nums.length - 1);
 		}
@@ -71,14 +71,16 @@ public class QuickSortAlgorithm {
 	
 	public static void printArr(int[] nums) {
 		System.out.println("快排前的数组:");
-		for (int i = 0; i < nums.length; i++) {
-			System.out.print(nums[i] + "\t");
+		for (int i : nums) {
+			System.out.println(i+"\t");
+			
 		}
-		quick(nums);
+		select(nums);
 		System.out.println();
 		System.out.println("快排后的数组:");
-		for (int i = 0; i < nums.length; i++) {
-			System.out.print(nums[i] + "\t");
+		for (int i : nums) {
+			System.out.println(i+"\t");
+			
 		}
 	}
 
