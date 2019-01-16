@@ -9,9 +9,11 @@
 
 ​	由来:因为越小的元素后经由交换慢慢"浮"到数列的顶端
 
+![image](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.png)
+
+​	具体代码如:[java](https://github.com/fightingWhite/InterviewMustKnow/blob/master/src/com/algorithm/bubbleSort/BubbleSort.java)
 
 
-​	具体代码如:src/com/algorithm/bubbleSort/BubbleSort.java
 
 # **快速排序**
 
