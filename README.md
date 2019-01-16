@@ -47,4 +47,13 @@ a）一趟排序的过程：
 
 ## 选择排序
 
-基本思想:给定数组int[] nums={n个数据};第一趟排序,在待排序num[1]-->nums[n]中选出最小的数据,将它与nums[1]交换;在第2躺,在待排序数据num[2]-->nums[n]中选出最小的数据,将它与nums[2]交换;以此类推,第i躺在待排序数据nums[i]-->nums[n]中选出最小的数据,将它与nums[i]交换,直到全部排序完成
+### 选择排序基本思想:
+
+​	给定数组int[] nums={n个数据};第一趟排序,在待排序num[1]-->nums[n]中选出最小的数据,将它与nums[1]交换;在第2躺,在待排序数据num[2]-->nums[n]中选出最小的数据,将它与nums[2]交换;以此类推,第i躺在待排序数据nums[i]-->nums[n]中选出最小的数据,将它与nums[i]交换,直到全部排序完成
+
+​	选择排序全过程:
+
+![image](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F.png)
+
+​	具体代码如下:
+
