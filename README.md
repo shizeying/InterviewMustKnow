@@ -75,7 +75,7 @@ a）一趟排序的过程：
 
 排序过程:
 
-​	
+​	![image](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95.png)
 
 如图:
 
