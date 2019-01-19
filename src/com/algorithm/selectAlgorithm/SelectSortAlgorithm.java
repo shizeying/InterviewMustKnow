@@ -1,6 +1,6 @@
 package com.algorithm.selectAlgorithm;
 /**
- * 选择排序
+ * 简单选择排序
  * @author shizeying
  * @Date 2019-01-16 23:13:51
  * @Description 

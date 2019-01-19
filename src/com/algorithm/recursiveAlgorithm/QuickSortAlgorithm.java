@@ -1,7 +1,7 @@
 package com.algorithm.recursiveAlgorithm;
 
 /**
- * 
+ * 快速排序
  * @author shizeying
  * @Date 2019-01-16 21:14:19
  * @Description 查找中轴（最低位作为中轴）所在位置
@@ -72,14 +72,14 @@ public class QuickSortAlgorithm {
 	public static void printArr(int[] nums) {
 		System.out.println("快排前的数组:");
 		for (int i : nums) {
-			System.out.println(i+"\t");
+			System.out.print(i+"\t");
 			
 		}
 		select(nums);
 		System.out.println();
 		System.out.println("快排后的数组:");
 		for (int i : nums) {
-			System.out.println(i+"\t");
+			System.out.print(i+"\t");
 			
 		}
 	}

@@ -1,13 +1,15 @@
 package com.algorithm.bubbleSort;
 
 import java.util.Arrays;
+
 /**
- *
+ * 冒泡排序
  * @author shizeying
- * @Date 2019-01-16 20:50:55
- * @Description  
+ * @Date 2019-01-19 18:00:02
+ * @Description 
  *
- * 
+ * 
+ 
  */
 public class BubbleSort {
 
@@ -40,7 +42,11 @@ public class BubbleSort {
 		for (int i : nums) {
 			System.out.print(i + "\t");
 		}
+		long newTimeStart = System.currentTimeMillis();
 		bubbleSort.bubbleSort(nums);
+		long newTimeEnd = System.currentTimeMillis();
+		long time = newTimeEnd - newTimeStart;
+		System.out.println("所用时间:" + time);
 		System.out.println();
 		System.out.print("排序后:");
 		for (int i : nums) {
