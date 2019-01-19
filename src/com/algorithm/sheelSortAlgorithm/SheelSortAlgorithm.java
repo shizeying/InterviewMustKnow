@@ -31,23 +31,26 @@ public class SheelSortAlgorithm {
 		return nums;
 	}
 	
-	public static void printArr(int[] nums) {
-		System.out.println("简单选择排序前的数组:");
-		
+	private static void printArr(int[] nums) {
+		System.out.println("基数排序前的数组:");
+
 		for (int i : nums) {
-			System.out.print(i+ "\t");
+			System.out.print(i + "\t");
 		}
-		
-		long newTimeStart=System.currentTimeMillis();
-		int[] newNums=sheelSort(nums);
-		long newTimeEnd=System.currentTimeMillis();
-		long time=newTimeEnd-newTimeStart;
-		System.out.println("所用时间:"+time);
+		int[] newNums = sheelSort(nums);
 		System.out.println();
-		System.out.println("简单选择排序后的数组:");
+		System.out.println("基数排序后的数组:");
 		for (int i : newNums) {
 			System.out.print(i + "\t");
 		}
+	}
+
+	public static String time(int[] nums) {
+		long newTimeStart = System.currentTimeMillis();
+		printArr(nums);
+		long newTimeEnd = System.currentTimeMillis();
+		  float time=(float)(newTimeEnd-newTimeStart)/1000;
+		return ("所用时间:" + time+"ms");
 	}
 	
 

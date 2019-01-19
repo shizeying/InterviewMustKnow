@@ -67,8 +67,8 @@ public class MergeSortAlgorithm {
 		long newTimeStart = System.currentTimeMillis();
 		printArr(nums);
 		long newTimeEnd = System.currentTimeMillis();
-		long time = newTimeEnd - newTimeStart;
-		return ("所用时间:" + time);
+		  float time=(float)(newTimeEnd-newTimeStart)/1000;
+		return ("所用时间:" + time+"ms");
 	}
 
 }

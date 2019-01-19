@@ -63,25 +63,33 @@ public class QuickSortAlgorithm {
 	 * 
 	 * @param nums 带排序的数组
 	 */
-	private static void select(int[] nums) {
+	private static int[] select(int[] nums) {
 		if (nums.length > 0) {
 			quickSort(nums, 0, nums.length - 1);
 		}
+		return nums;
 	}
 	
-	public static void printArr(int[] nums) {
-		System.out.println("快排前的数组:");
+	private static void printArr(int[] nums) {
+		System.out.println("基数排序前的数组:");
+
 		for (int i : nums) {
-			System.out.print(i+"\t");
-			
+			System.out.print(i + "\t");
 		}
-		select(nums);
+		int[] newNums = select(nums);
 		System.out.println();
-		System.out.println("快排后的数组:");
-		for (int i : nums) {
-			System.out.print(i+"\t");
-			
+		System.out.println("基数排序后的数组:");
+		for (int i : newNums) {
+			System.out.print(i + "\t");
 		}
+	}
+
+	public static String time(int[] nums) {
+		long newTimeStart = System.currentTimeMillis();
+		printArr(nums);
+		long newTimeEnd = System.currentTimeMillis();
+		  float time=(float)(newTimeEnd-newTimeStart)/1000;
+		return ("所用时间:" + time+"ms");
 	}
 
 }

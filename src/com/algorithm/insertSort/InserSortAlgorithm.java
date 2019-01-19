@@ -34,18 +34,26 @@ public class InserSortAlgorithm {
 		return nums;
 	}
 
-	public static void printArr(int[] nums) {
-		System.out.println("插入排序前的数组:");
+	private static void printArr(int[] nums) {
+		System.out.println("直接插入排序前的数组:");
+
 		for (int i : nums) {
 			System.out.print(i + "\t");
-
 		}
-		insertSort(nums);
+		int[] newNums = insertSort(nums);
 		System.out.println();
-		System.out.println("插入排序后的数组:");
-		for (int i : nums) {
+		System.out.println("直接插入排序后的数组:");
+		for (int i : newNums) {
 			System.out.print(i + "\t");
-
 		}
 	}
+
+	public static String time(int[] nums) {
+		long newTimeStart = System.currentTimeMillis();
+		printArr(nums);
+		long newTimeEnd = System.currentTimeMillis();
+		  float time=(float)(newTimeEnd-newTimeStart)/1000;
+		return ("所用时间:" + time+"ms");
+	}
+
 }

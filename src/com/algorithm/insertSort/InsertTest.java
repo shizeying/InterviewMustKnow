@@ -4,8 +4,7 @@ public class InsertTest {
 
 	public static void main(String[] args) {
 		InserSortAlgorithm isa=new InserSortAlgorithm();
-		int[] nums = { 0, 9, 5, 6, 12, 31, 23, 15, 100 };
-		
-		isa.printArr(nums);
+		int[] nums = { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+		System.out.println(isa.time(nums));
 	}
 }
