@@ -1,4 +1,4 @@
-package com.algorithm.insertSort;
+package com.algorithm.directInserSortAlgorithm;
 /**
  * 直接插入排序
  * @author shizeying
@@ -6,7 +6,7 @@ package com.algorithm.insertSort;
  * @Description 
  *
  */
-public class InserSortAlgorithm {
+public class DirectInserSortAlgorithm {
 
 	/**
 	 * 特点:
