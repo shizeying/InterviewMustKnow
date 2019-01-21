@@ -3,7 +3,7 @@
 
 
 
-## 冒泡排序
+## 1.冒泡排序
 
 ### 基本思想
 
@@ -11,7 +11,7 @@
 
 ​	由来:因为越小的元素后经由交换慢慢"浮"到数列的顶端​	
 
-### 描述
+### 
 
 - 比较相邻的元素.如果第一个大于大于的第二个,就交换它们两个;
 
@@ -35,7 +35,7 @@
 
 
 
-## **快速排序**
+## **2.快速排序**
 
 ### 快速排序的基本思想：
 
@@ -61,7 +61,7 @@
 
 
 
-## 选择排序
+## 3.选择排序
 
 ### 选择排序基本思想:
 
@@ -85,7 +85,7 @@ n个记录的直接选择排序可经过n-1趟直接选择排序得到有序结�
 
 ​	具体代码如下:[SelectSortAlgorithm](https://github.com/fightingWhite/InterviewMustKnow/blob/master/src/com/algorithm/selectAlgorithm/SelectSortAlgorithm.java)
 
-## 插入排序
+## 4.插入排序
 
 ### 基本思想
 
@@ -111,7 +111,7 @@ n个记录的直接选择排序可经过n-1趟直接选择排序得到有序结�
 
 具体代码实现如下:[DirectInserSortAlgorithm ](https://github.com/fightingWhite/InterviewMustKnow/blob/master/src/com/algorithm/directInserSortAlgorithm/DirectInserSortAlgorithm.java)
 
-## 希尔排序
+## 5.希尔排序
 
 ### 算法思想
 
@@ -119,7 +119,7 @@ n个记录的直接选择排序可经过n-1趟直接选择排序得到有序结�
 
 不同：会优先比较距离较远的元素。
 
-$\textcolor{Magenta}{**希尔排序是把记录按下表的一定增量分组，对魅族使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，此时算法终止。**} ​$
+**希尔排序是把记录按下表的一定增量分组，对魅族使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，此时算法终止。**
 
 ### 算法分析
 
@@ -132,6 +132,86 @@ $\textcolor{Magenta}{**希尔排序是把记录按下表的一定增量分组，
 - 每趟排序，根据对应的增量ti，将待排序序列分割成若干个长度为m的子序列，分别对各子表进行直接插入排序。仅增量因子为1时，整个序列作为一个表来处理，表长度即为整个序列的长度
 
 ### 过程演示
+
+![png](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.png)
+
+具体代码如下：[SheelSortAlgorithm](https://github.com/fightingWhite/InterviewMustKnow/blob/master/src/com/algorithm/sheelSortAlgorithm/SheelSortAlgorithm.java)
+
+## 6.归并排序
+
+### 算法思想：
+
+该算法不受输入数据的影响，但是比选择*好的多*，因为始终都是O(n log n)的事件复杂度。代价：需要额外的内存空间。
+
+该算法采用分治法的一个非常典型的应用。归并排序时**稳定**的排序方法。
+
+将已有的子序列合并，得到完全有序的序列；即先使每个子序列有序。若将两个有序表合并成一个有序表，称为***2-路归并***
+
+### 算法描述
+
+- 将长度为n的输入序列分为两个为n/2的子序列
+- 对这两个子序列分别采用归并排序
+- 将两个排序好的子序列合并成一个最终的排序序列
+
+### 动图演示
+
+![gif](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F.gif)
+
+#### 图示讲解
+
+分支策略（分治法将问题***分(divide)***成一些小的问题然后递归求解，而***治(conquer)***的阶段将分的阶段得到的答案“修补”在一起，即为**分而治之**）
+
+![归并排序1](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F.png)
+
+可以看到这种结构很像一颗完全二叉树。**分**的阶段可以理解为就是递归拆分子序列列的过程，递归深度为log2n。
+
+##### 合并相邻有序子序列
+
+**治**的阶段，需要将两个已经有序的子序列合并成一个有序序列，比如上图中的最后一次合并，要将[4,5,7,8]和[1,2,3,6]两个已经有序的子序列，合并为最后序列[1,2,3,4,5,6,7,8]
+
+![归并排序2](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F2.png)
+
+具体实现：[MergeSortAlgorithm](https://github.com/fightingWhite/InterviewMustKnow/blob/master/src/com/algorithm/mergeSortAlgorithm/MergeSortAlgorithm.java)
+
+## 7.堆排序
+
+### 基本思想：
+
+将待排序序列构成一个大顶堆，此时，整个序列的最大值就是堆顶的根节点。将其与末尾元素进行交换，此时末尾就为最大值。然后将剩余n-1个元素重新构成一个堆，这样会得到n个元素的此小值。如此反复，便能得到一个有序序列了
+
+### 堆
+
+堆是具有以下性质的完全二叉树:每个结点的值都大于或等于其左右孩子结点的值,称为***大顶堆***;或者每个结点的值小于或等于其左右孩子结点的值称为小顶堆.
+
+![堆](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%A0%86%E6%8E%92%E5%BA%8F.png)
+
+同时,我们对堆中的结点安层进行编号,将这种逻辑结构映射到数组中就是下面这个样子.
+
+
+
+##### 步骤一：构造初始堆。将给定无序序列构成一个大顶堆（一般升序采用大顶堆，降序采用小顶堆）。
+
+a.假定给定无序序列结构如下
+
+
+
+b.此时我们从最后一个非叶子节点开始（叶节点自然不用调整，第一个非叶子节点arr.length/2-1=5/2-1=1,也就是下面的6结点），从左至右，从下至上进行调整
+
+![堆排序1](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%A0%86%E6%8E%92%E5%BA%8F2.png)
+
+c.找到第二个非叶节点4，由于[4,9,8]中9元素最大，4和9交换。
+
+![堆排序2](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%A0%86%E6%8E%92%E5%BA%8F3.png)
+
+d.这时，交换导致了子根[4,5,6]结构混乱，继续调整，[4,5,6]中6最大，交换4和6.
+
+此时，我们就将一个无需序列构造成了一个大顶堆
+
+
+
+
+
+​	
 
 
 
