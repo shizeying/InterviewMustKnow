@@ -6,5 +6,4 @@ public class CountingSortTest {
 		int[] nums = { 329, 457, 657, 839, 436, 720 };
 		System.out.println(csa.time(nums));
 	}
-
 }

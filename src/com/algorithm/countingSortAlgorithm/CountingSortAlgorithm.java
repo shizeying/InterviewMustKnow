@@ -10,15 +10,16 @@ import java.util.Arrays;
 public class CountingSortAlgorithm {
 
 	private static int[] countingSort(int[] nums) {
-		if (nums.length == 0)
-			return nums;
+		if (nums.length == 0) {
+			return nums;			
+		}
 		// 计算最大最小值,严谨实现用ifPresent检查下
 		int max = Arrays.stream(nums).max().getAsInt();
 		int min = Arrays.stream(nums).min().getAsInt();
 		int N = nums.length;
 		int R = max - min + 1;// 最大最小元素之间的范围[min.max]的长度
 		// 计算频率,在需要的数组长度上额外加1
-		int[] count = new int[R = 1];
+		int[] count = new int[R + 1];
 		for (int i = 0; i < N; i++) {
 			// 使用+1后的索引,有重复的该位置就自增
 			count[nums[i] - min + 1]++;
