@@ -5,9 +5,27 @@
 
 ## 冒泡排序
 
+### 基本思想
+
 ​	首先,重复查看所有的数列,一次比较两个元素,如果顺序错误就把他们交换过来.走访数列的工作是重复进行直到没有再需要交换,就是该数列排序完成了.
 
-​	由来:因为越小的元素后经由交换慢慢"浮"到数列的顶端
+​	由来:因为越小的元素后经由交换慢慢"浮"到数列的顶端​	
+
+### 描述
+
+- 比较相邻的元素.如果第一个大于大于的第二个,就交换它们两个;
+
+- 对每一对相邻元素作同样的工作,从开始第一对到结尾最后一对,这样在最后的元素应该会是最大的数
+
+- 针对所有的元素重复以上的步骤,除了最后一个
+
+- 重复步骤1~3,知道排序完成
+
+  
+
+### 动图演示	
+
+![gif](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%86%92%E6%B3%A1.gif)
 
 #### 冒泡排序的示例:
 
@@ -21,37 +39,47 @@
 
 ### 快速排序的基本思想：
 
-```
-     通过一趟排序将待排序记录分割成独立的两部分，其中一部分记录的关键字均比另一部分关键字小，则分别对这两部分继续进行排序，直到整个序列有序。
-```
+​     通过一趟排序将待排序记录分割成独立的两部分，其中一部分记录的关键字均比另一部分关键字小，则分别对这两部分继续进行排序，整个排序过程可以递归进行,以此达到整个数据变成有序序列
 
-#### 快速排序的示例：
+### 动图演示
 
-a）一趟排序的过程：
+![gif](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.gif)
 
-![image](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%BF%AB%E6%8E%92(a).png)
+### 基本步骤
 
-（b）排序的全过程
+#### 	三数取中
 
-![image](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%BF%AB%E6%8E%92(b).png)
+​		在快排的过程中,每一次我们要取一个元素作为枢纽值,以整个数字将序列划分为两部分.在此采用三数取中法,就是**左端**、**中间**、**右端**三个数,然后进行排序,将**中间数**作为枢纽值
 
-把整个序列看做一个数组，**把第零个位置看做中轴**，和最后一个比，如果比它小交换，比它大不做任何处理；交换了以后再和小的那端比，比它小不交换，比他大交换。这样循环往复，一趟排序完成，左边就是比中轴小的，右边就是比中轴大的，然后再用分治法，分别对这两个独立的数组进行排序。
+![png](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%BF%AB%E6%8E%92(a).png)
+
+**根据枢纽值进行分割**
+
+![png](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%BF%AB%E6%8E%92(b).png)
 
 具体代码如下:[QuickSortAlgorithm](https://github.com/fightingWhite/InterviewMustKnow/blob/master/src/com/algorithm/recursiveAlgorithm/QuickSortAlgorithm.java)
 
-***分析结论:***
 
-​	**快排**通常为(O(nlog2n))的排序方法中平均性能最好的.但初始序列按关键码有序或基本有序是,**快排**就会变为**冒泡排序**.所以通常用"三者取中法"来选取基准记录,即将排序曲边的两个端点与重点三个记录关键码居中的调整为支点记录.
-
-​	**缺点**:是一个不稳点的排序方法
 
 ## 选择排序
 
 ### 选择排序基本思想:
 
-​	给定数组int[] nums={n个数据};第一趟排序,在待排序num[1]-->nums[n]中选出最小的数据,将它与nums[1]交换;在第2躺,在待排序数据num[2]-->nums[n]中选出最小的数据,将它与nums[2]交换;以此类推,第i躺在待排序数据nums[i]-->nums[n]中选出最小的数据,将它与nums[i]交换,直到全部排序完成
+​	首先末排序序列中找到最小(大)元素.存放到排序序列的起始位置,然后,在从剩余末排序元素中继续寻找最小(大)元素,放到已排序末尾.以此类推,直到所有元素均排序完毕.
 
-​	选择排序全过程:
+### 算法描述
+
+n个记录的直接选择排序可经过n-1趟直接选择排序得到有序结果.描述如下:
+
+- 初始状态:无序区为R[1..n],有序区为空;
+- 第i趟排序(i=1,2,3..n-1)开始时,当前有序区和无序区分别为R[1..i-1]和R(i..n)。该趟排序从当前无序区中-选出关键字最小的记录R[k],将它与无序区的第1个记录R交换,使R[1..n]和R[i+1..n)分别变为记录个数增加1个的新有序区的记录个数减少1个的新无序区；
+- n-1躺结束，数组有序化
+
+### 动图演示
+
+![gif](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F.gif)
+
+​	示例:
 
 ![image](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F.png)
 
@@ -61,7 +89,7 @@ a）一趟排序的过程：
 
 ### 基本思想
 
-​		插入排序通过构建有序序列,对于位置序列,在已排序序列中从后向前扫描,找到相应位置并插入,如此重复,直至完成序列排序.
+​		插入排序通过构建有序序列,对于未排序数据，子啊已排序序列中从后向前扫描，找到相应位置并插入。
 
 ### 算法分析
 
@@ -73,19 +101,13 @@ a）一趟排序的过程：
 
 ​	4.重复2,3步骤,完成排序
 
+### 动图演示
+
+![gif](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.gif)
+
 排序过程:
 
-​	![image](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95.png)
+​	![png](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.png)
 
-如图:
-
-1. 默认序列第一个12已经被排序
-
-2. 取下一个元素15从后往前与已排序序列一次比较,15插入12后,已排列序列为[12,15]
-
-3. 取下一个元素9,重复2步骤,将9插入12之前,已排序序列为[9,12,15]
-
-4. 循环上述操作,直至最后一个元素24,插入合适位置,完成排序.
-
-   具体代码实现如下:[InserSortAlgorithm](https://github.com/fightingWhite/InterviewMustKnow/blob/master/src/com/algorithm/insertSort/InserSortAlgorithm.java)
+具体代码实现如下:[DirectInserSortAlgorithm ](https://github.com/fightingWhite/InterviewMustKnow/blob/master/src/com/algorithm/directInserSortAlgorithm/DirectInserSortAlgorithm.java
 
