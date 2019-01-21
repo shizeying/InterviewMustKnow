@@ -187,25 +187,90 @@ n个记录的直接选择排序可经过n-1趟直接选择排序得到有序结�
 
 同时,我们对堆中的结点安层进行编号,将这种逻辑结构映射到数组中就是下面这个样子.
 
+![堆-1](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%A0%86%E6%8E%92%E5%BA%8F-1.png)
+
+该数组从逻辑上讲就是一个堆结构,用简单的公式对其定义就是:
+
+```java
+大顶堆:arr[i] >= arr[2i+1] && arr[i] >= arr[2i+2]
+小顶堆:arr[i] <= arr[2i+1] && arr[i] <= arr[2i+2]
+```
+
 
 
 ##### 步骤一：构造初始堆。将给定无序序列构成一个大顶堆（一般升序采用大顶堆，降序采用小顶堆）。
 
 a.假定给定无序序列结构如下
 
-
+![堆排序1](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%A0%86%E6%8E%92%E5%BA%8F2.png)
 
 b.此时我们从最后一个非叶子节点开始（叶节点自然不用调整，第一个非叶子节点arr.length/2-1=5/2-1=1,也就是下面的6结点），从左至右，从下至上进行调整
 
-![堆排序1](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%A0%86%E6%8E%92%E5%BA%8F2.png)
+![堆排序2](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%A0%86%E6%8E%92%E5%BA%8F3.png)
 
 c.找到第二个非叶节点4，由于[4,9,8]中9元素最大，4和9交换。
 
-![堆排序2](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%A0%86%E6%8E%92%E5%BA%8F3.png)
+![堆排序3](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%A0%86%E6%8E%92%E5%BA%8F4.png)
 
 d.这时，交换导致了子根[4,5,6]结构混乱，继续调整，[4,5,6]中6最大，交换4和6.
 
 此时，我们就将一个无需序列构造成了一个大顶堆
+
+![堆排序4](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%A0%86%E6%8E%92%E5%BA%8F5.png)
+
+##### 步骤二:将堆顶元素与末尾元素进行交换,使末尾元素最大。然后接续调整堆，再将堆元素与末尾元素交换，得到第二大元素。如此反复交换、重建、交换。
+
+a.将堆顶元素9和末尾元素4进行交换。
+
+![堆排序5](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%A0%86%E6%8E%92%E5%BA%8F6.png)
+
+b.重新调整结构，使其继续满足堆定义
+
+![堆排序6](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%A0%86%E6%8E%92%E5%BA%8F9.png)
+
+c.再将堆顶元素8与末尾元素5进行交换，得到第二大元素8
+
+![堆排序7](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%A0%86%E6%8E%92%E5%BA%8F7.png)
+
+后续过程继续进行调整交换，如此反复，最终使得整个序列有序
+
+![堆排序8](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%A0%86%E6%8E%92%E5%BA%8F8.png)
+
+#### 基本思路
+
+a.将无序序列构建成一个堆，根据升序降序需求选择大顶堆或小顶堆
+
+b.将堆顶元素与末尾元素交换，将最大元素“沉”到数组末端
+
+c.重新调整结构，使其满足堆定义，然后继续交换堆顶元素与当前末尾元素，反复执行调整+步骤交换，直到整个序列有序。
+
+### 动图演示
+
+![gif](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%A0%86%E6%8E%92%E5%BA%8F.gif)
+
+实例如下：[HeapSortAlgorithm](https://github.com/fightingWhite/InterviewMustKnow/blob/master/src/com/algorithm/heapSortAlgorithm/HeapSortAlgorithm.java)
+
+## 8.基数排序
+
+### 算法思想
+
+按照地位先排序，然后收集；再按照高位排序，然后再收集；依次类推，直到最高为。
+
+有时候有些属性是有优先级顺序的，先按优先级排序，再按高优先级排序。最后的次序就是高优先级高的在前，高优先级相同的低优先级高的在前。
+
+### 算法描述
+
+- 取得数组中的最大位，并取得位数；
+- arr为原始数组，从最低为开始取每个位组成radix数组
+- 堆radix进行计数排序（利用技术排序适用于小范围数的特点）
+
+### 动图演示
+
+![gif](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F.gif)
+
+实例如下：[CardinalitySortAlgorithm](https://github.com/fightingWhite/InterviewMustKnow/blob/master/src/com/algorithm/baseSortAlgorithm/CardinalitySortAlgorithm.java)
+
+
 
 
 
