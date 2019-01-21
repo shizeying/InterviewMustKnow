@@ -65,7 +65,7 @@
 
 ### 选择排序基本思想:
 
-​	首先末排序序列中找到最小(大)元素.存放到排序序列的起始位置,然后,在从剩余末排序元素中继续寻找最小(大)元素,放到已排序末尾.以此类推,直到所有元素均排序完毕.
+​	首先末排序序列中找到最小(大)元素.存放到排序序列的起始位置,然后,在从剩余末排序元素中继续寻找最小(大元素,放到已排序末尾.以此类推,直到所有元素均排序完毕.
 
 ### 算法描述
 
@@ -109,5 +109,21 @@ n个记录的直接选择排序可经过n-1趟直接选择排序得到有序结�
 
 ​	![png](https://github.com/fightingWhite/InterviewMustKnow/blob/master/image/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.png)
 
-具体代码实现如下:[DirectInserSortAlgorithm ](https://github.com/fightingWhite/InterviewMustKnow/blob/master/src/com/algorithm/directInserSortAlgorithm/DirectInserSortAlgorithm.java
+具体代码实现如下:[DirectInserSortAlgorithm ](https://github.com/fightingWhite/InterviewMustKnow/blob/master/src/com/algorithm/directInserSortAlgorithm/DirectInserSortAlgorithm.java)
+
+## 希尔排序
+
+### 算法思想
+
+首先希尔排序也是一种插入排序，是经过简单插入排序经过改进之后的更搞高效大的版本，也称为**缩小量排序**，也是该算法冲破O(n2)的第一批算法之一。
+
+不同：会优先比较距离较远的元素。
+
+==**希尔排序是把记录按下表的一定增量分组，对魅族使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，此时算法终止。**==
+
+
+
+
+
+
 
